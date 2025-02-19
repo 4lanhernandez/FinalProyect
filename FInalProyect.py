@@ -1,7 +1,7 @@
 agenda = {}
 
 def mostrar_menu():
-    """Muestra el menú de opciones en la terminal."""
+    #Muestra el menú de opciones en la terminal.
     print("=" * 40)
     print("📞 CONTACTOS 📞".center(40))
     print("1️⃣ Agregar contacto")
@@ -25,7 +25,7 @@ def agregar_contacto():
 def buscar_contacto():
     nombre = input("🔍 Ingresa el nombre a buscar: ").strip().capitalize()
     if nombre in agenda:
-        print(f"☎️ {nombre}: {agenda[nombre]}")
+        print(f"📱 {nombre}: {agenda[nombre]}")
     else:
         print(f"❌ El contacto '{nombre}' no existe.")
 
@@ -43,10 +43,30 @@ def mostrar_contactos():
     if not agenda:
         print("📂 La agenda está vacía.")
     else:
+        print("-" * 40)
         print("\n📋 LISTA DE CONTACTOS 📋")
         print("-" * 40)
         for nombre, telefono in agenda.items():
             print(f"📌 {nombre}: {telefono}")
         print("-" * 40)
 
+# Interacción con el usuario, pasos a seguir: 
+
+while True:
+    mostrar_menu()
+    opcion = input("📌 Elige una opción: ").strip()
+
+    if opcion == "1":
+        agregar_contacto()
+    elif opcion == "2":
+        buscar_contacto()
+    elif opcion == "3":
+        eliminar_contacto()
+    elif opcion == "4":
+        mostrar_contactos()
+    elif opcion == "5":
+        print("\n👋 Saliendo del menú... ¡Hasta luego!, ten un buen día\n")
+        break
+    else:
+        print("\n⚠️ Esta opción no es válida, intenta de nuevo.\n") 
         
