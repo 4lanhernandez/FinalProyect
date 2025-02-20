@@ -43,7 +43,6 @@ def mostrar_contactos():
     if not agenda:
         print("📂 La agenda está vacía.")
     else:
-        print("-" * 40)
         print("\n📋 LISTA DE CONTACTOS 📋")
         print("-" * 40)
         for nombre, telefono in agenda.items():
